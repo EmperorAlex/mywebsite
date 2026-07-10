@@ -89,3 +89,15 @@ button:hover{
     background:#ff5ea8;
 
 }
+
+.tiny{
+
+    margin-top:30px;
+
+    font-size:.85rem;
+
+    color:#999;
+
+    font-style:italic;
+
+}
