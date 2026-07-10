@@ -18,7 +18,7 @@ body {
 .box {
     width: 500px;
     padding: 20px;
-    background-color: white;
+    background-color: rgb(255, 0, 0);
     border: black;
     border-radius: 50px;
 }
