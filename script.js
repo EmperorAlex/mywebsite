@@ -1,5 +1,5 @@
-const button = document.querySelector("button");
+document.getElementById("enter").addEventListener("click", function(){
 
-button.addEventListener("click", () => {
-    alert("You clicked the button!");
+    alert("The rest of the website isn't built yet... but thank you for visiting 🌸");
+
 });
