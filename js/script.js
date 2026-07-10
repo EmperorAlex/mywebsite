@@ -1,13 +1,13 @@
-const enterButton = document.getElementById("enter");
-
 const landing = document.getElementById("landing");
 
 const cafe = document.getElementById("cafe");
 
-enterButton.addEventListener("click", () => {
+const enterButton = document.getElementById("enter");
 
-    landing.style.display = "none";
+enterButton.addEventListener("click", function () {
 
-    cafe.style.display = "block";
+    landing.classList.add("hidden");
+
+    cafe.classList.remove("hidden");
 
 });
