@@ -5,11 +5,12 @@ body{
 .box {
     text-align: center;
     color: azure;
-    font-size:larger
+    font-size:larger;
 }
 
 body {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh; 
 }
