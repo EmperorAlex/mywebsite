@@ -1,3 +1,9 @@
 body{
-    background-color: #ff0f0f;
+    background-color: #d33182;
+}
+
+h1 {
+    text-align: center;
+    color: azure;
+    font-size: large;
 }
