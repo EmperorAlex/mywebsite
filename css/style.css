@@ -2,7 +2,7 @@ body{
     background-color: #d33182;
 }
 
-h1 {
+.box {
     text-align: center;
     color: azure;
     font-size:larger
