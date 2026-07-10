@@ -1,5 +1,7 @@
-document.getElementById("enter").addEventListener("click", function(){
+const button = document.getElementById("enter");
 
-    alert("The rest of the website isn't built yet... but thank you for visiting 🌸");
+button.addEventListener("click", () => {
+
+    alert("Welcome to the garden 🌸");
 
 });

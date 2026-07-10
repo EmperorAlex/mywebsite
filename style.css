@@ -1,32 +1,91 @@
-body{
+*{
     margin:0;
-    font-family: "Trebuchet MS", Arial, sans-serif;
-    background:#ffd9e8;
-    color:#5b2944;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    background:linear-gradient(#ffd8ea,#ffeef7);
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-family:Georgia, serif;
+
+}
+
+.container{
+
+    background:white;
+
+    padding:60px;
+
+    border-radius:30px;
+
     text-align:center;
+
+    width:600px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.12);
+
 }
 
 h1{
-    font-size:3rem;
-    margin-top:80px;
+
+    color:#ff5ea8;
+
+    margin-bottom:25px;
+
+}
+
+.welcome{
+
+    font-size:22px;
+
+    margin-bottom:20px;
+
 }
 
 p{
-    font-size:1.2rem;
+
+    color:#555;
+
+    line-height:1.8;
+
 }
 
 button{
-    background:#ff75b5;
+
+    margin-top:35px;
+
+    background:#ff77b7;
+
     color:white;
+
     border:none;
-    padding:15px 35px;
-    border-radius:15px;
+
+    padding:16px 36px;
+
     font-size:18px;
+
+    border-radius:50px;
+
     cursor:pointer;
+
     transition:.3s;
+
 }
 
 button:hover{
-    background:#ff4d9c;
-    transform:scale(1.05);
+
+    transform:translateY(-3px);
+
+    background:#ff5ea8;
+
 }
