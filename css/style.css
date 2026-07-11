@@ -70,8 +70,7 @@ body{
 /* ---------- GLASS CARD ---------- */
 
 .welcome-card{
-    .welcome-card{
-
+    
     width:720px;
     max-width:90%;
 
@@ -98,6 +97,7 @@ body{
     /* Add these */
     position:relative;
     overflow:hidden;
+
 }
 
 .welcome-card::before{
