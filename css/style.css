@@ -31,7 +31,7 @@ body{
 
     background-size:cover;
 
-    background-position:center;
+    background-position:center center;
 
     background-repeat:no-repeat;
 
@@ -61,9 +61,9 @@ body{
     .overlay{
 
     background:linear-gradient(
-        rgba(40,28,20,.48),
-        rgba(40,28,20,.58)
-    );
+    rgba(55,38,26,.40),
+    rgba(40,28,20,.58)
+);
 
 }
 
