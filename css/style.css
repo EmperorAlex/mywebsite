@@ -70,18 +70,50 @@ body{
 /* ---------- GLASS CARD ---------- */
 
 .welcome-card{
-    ...
-    position: relative;
-    overflow: hidden;
+    .welcome-card{
+
+    width:720px;
+    max-width:90%;
+
+    padding:70px 60px;
+
+    text-align:center;
+
+    border-radius:28px;
+
+    background:rgba(255,250,245,.92);
+
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(175,140,120,.20);
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.28),
+        0 0 0 6px rgba(255,255,255,.08);
+
+    color:#4E392F;
+
+    animation:fadeUp 1.2s ease;
+
+    /* Add these */
+    position:relative;
+    overflow:hidden;
 }
 
 .welcome-card::before{
+
     content:"";
+
     position:absolute;
+
     inset:0;
+
     border-radius:28px;
+
     pointer-events:none;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,.65);
+
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.65);
+
 }
 
 /* ---------- SMALL TITLE ---------- */
