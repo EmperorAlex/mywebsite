@@ -1,0 +1,430 @@
+/* ==========================================================
+   My Little Corner
+   Phase 6 - Secret Garden
+========================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+
+    --night:#0F172A;
+    --moon:#FDF6D8;
+    --glass:rgba(255,255,255,.12);
+    --white:#FFFFFF;
+
+}
+
+body{
+
+    font-family:"Poppins",sans-serif;
+
+    min-height:100vh;
+
+    background:url("../images/garden-night.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-attachment:fixed;
+
+    overflow:hidden;
+
+    color:white;
+
+}
+
+/* ==========================
+   Overlay
+========================== */
+
+.overlay{
+
+    min-height:100vh;
+
+    background:linear-gradient(
+        rgba(5,10,20,.45),
+        rgba(8,15,30,.65)
+    );
+
+    padding:40px;
+
+    position:relative;
+
+}
+
+/* ==========================
+   Back Button
+========================== */
+
+.backButton{
+
+    display:inline-block;
+
+    text-decoration:none;
+
+    color:white;
+
+    padding:14px 24px;
+
+    border-radius:40px;
+
+    background:rgba(255,255,255,.10);
+
+    backdrop-filter:blur(18px);
+
+    transition:.3s;
+
+}
+
+.backButton:hover{
+
+    background:rgba(255,255,255,.20);
+
+}
+
+/* ==========================
+   Header
+========================== */
+
+header{
+
+    text-align:center;
+
+    margin-top:30px;
+
+}
+
+header h1{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:64px;
+
+    margin-bottom:15px;
+
+}
+
+header p{
+
+    opacity:.9;
+
+    font-size:19px;
+
+}
+
+/* ==========================
+   Moon
+========================== */
+
+.moon{
+
+    width:170px;
+
+    height:170px;
+
+    border-radius:50%;
+
+    background:var(--moon);
+
+    position:absolute;
+
+    top:60px;
+
+    right:80px;
+
+    box-shadow:
+
+    0 0 50px rgba(255,255,220,.45),
+
+    0 0 120px rgba(255,255,220,.20);
+
+    animation:moonGlow 5s ease-in-out infinite;
+
+}
+
+/* ==========================
+   Garden
+========================== */
+
+.garden{
+
+    width:100%;
+
+    height:60vh;
+
+    margin-top:40px;
+
+    position:relative;
+
+}
+
+/* ==========================
+   Flowers
+========================== */
+
+.flower{
+
+    position:absolute;
+
+    font-size:55px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    animation:sway 4s ease-in-out infinite;
+
+    filter:drop-shadow(0 0 10px rgba(255,255,255,.25));
+
+}
+
+.flower:hover{
+
+    transform:scale(1.25);
+
+    filter:drop-shadow(0 0 25px rgba(255,255,180,.75));
+
+}
+
+/* Manual Positions */
+
+.flower:nth-child(1){
+
+    left:12%;
+
+    bottom:15%;
+
+}
+
+.flower:nth-child(2){
+
+    left:30%;
+
+    bottom:28%;
+
+    animation-delay:1s;
+
+}
+
+.flower:nth-child(3){
+
+    left:50%;
+
+    bottom:12%;
+
+    animation-delay:2s;
+
+}
+
+.flower:nth-child(4){
+
+    left:68%;
+
+    bottom:22%;
+
+    animation-delay:3s;
+
+}
+
+.flower:nth-child(5){
+
+    left:82%;
+
+    bottom:16%;
+
+    animation-delay:1.5s;
+
+}
+
+.flower:nth-child(6){
+
+    left:92%;
+
+    bottom:30%;
+
+}
+
+/* ==========================
+   Secret Card
+========================== */
+
+#secretCard{
+
+    width:650px;
+
+    max-width:95%;
+
+    margin:0 auto;
+
+    background:var(--glass);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:25px;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    padding:40px;
+
+    text-align:center;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.35);
+
+}
+
+#secretCard h2{
+
+    font-family:"Playfair Display",serif;
+
+    margin-bottom:20px;
+
+    font-size:38px;
+
+}
+
+#secretText{
+
+    line-height:1.9;
+
+    font-size:18px;
+
+}
+
+/* ==========================
+   Fireflies
+========================== */
+
+.firefly{
+
+    position:absolute;
+
+    width:8px;
+
+    height:8px;
+
+    border-radius:50%;
+
+    background:#FFE873;
+
+    box-shadow:0 0 15px #FFE873;
+
+    animation:fly linear forwards;
+
+}
+
+/* ==========================
+   Footer
+========================== */
+
+footer{
+
+    margin-top:50px;
+
+    text-align:center;
+
+    opacity:.8;
+
+}
+
+/* ==========================
+   Animations
+========================== */
+
+@keyframes sway{
+
+    0%,100%{
+
+        transform:rotate(-4deg);
+
+    }
+
+    50%{
+
+        transform:rotate(4deg);
+
+    }
+
+}
+
+@keyframes moonGlow{
+
+    0%,100%{
+
+        box-shadow:
+        0 0 50px rgba(255,255,220,.45),
+        0 0 120px rgba(255,255,220,.20);
+
+    }
+
+    50%{
+
+        box-shadow:
+        0 0 70px rgba(255,255,220,.75),
+        0 0 160px rgba(255,255,220,.35);
+
+    }
+
+}
+
+@keyframes fly{
+
+    from{
+
+        transform:translateY(0);
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:translateY(-250px);
+
+        opacity:0;
+
+    }
+
+}
+
+/* ==========================
+   Mobile
+========================== */
+
+@media(max-width:768px){
+
+header h1{
+
+    font-size:44px;
+
+}
+
+.moon{
+
+    width:110px;
+
+    height:110px;
+
+    top:40px;
+
+    right:30px;
+
+}
+
+.flower{
+
+    font-size:42px;
+
+}
+
+#secretCard{
+
+    padding:30px;
+
+}
+
+}

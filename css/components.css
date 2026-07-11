@@ -1,0 +1,523 @@
+/* ==========================================================
+   My Little Corner
+   Reusable Components
+========================================================== */
+
+/* ==========================
+   Glass Card
+========================== */
+
+.glass-card{
+
+    background:var(--glass);
+
+    border:1px solid var(--glass-border);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:var(--radius-large);
+
+    box-shadow:var(--shadow-medium);
+
+    padding:40px;
+
+}
+
+/* ==========================
+   Primary Button
+========================== */
+
+.primary-button{
+
+    border:none;
+
+    background:var(--cream);
+
+    color:var(--coffee);
+
+    padding:16px 34px;
+
+    border-radius:var(--radius-round);
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+    box-shadow:var(--shadow-small);
+
+}
+
+.primary-button:hover{
+
+    transform:translateY(-4px);
+
+    background:white;
+
+    box-shadow:var(--shadow-medium);
+
+}
+
+.primary-button:active{
+
+    transform:scale(.97);
+
+}
+
+/* ==========================
+   Secondary Button
+========================== */
+
+.secondary-button{
+
+    border:2px solid rgba(255,255,255,.20);
+
+    background:transparent;
+
+    color:white;
+
+    padding:15px 30px;
+
+    border-radius:var(--radius-round);
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+}
+
+.secondary-button:hover{
+
+    background:rgba(255,255,255,.12);
+
+}
+
+/* ==========================
+   Navigation
+========================== */
+
+.main-nav{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 28px;
+
+    border-radius:var(--radius-large);
+
+    background:var(--glass);
+
+    border:1px solid var(--glass-border);
+
+    backdrop-filter:blur(20px);
+
+}
+
+.main-nav h1{
+
+    font-size:28px;
+
+}
+
+.main-nav a{
+
+    transition:var(--transition);
+
+}
+
+.main-nav a:hover{
+
+    opacity:.8;
+
+}
+
+/* ==========================
+   Section Title
+========================== */
+
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:50px;
+
+}
+
+.section-title h1{
+
+    font-size:58px;
+
+    margin-bottom:15px;
+
+}
+
+.section-title p{
+
+    opacity:.85;
+
+    font-size:18px;
+
+}
+
+/* ==========================
+   Divider
+========================== */
+
+.divider{
+
+    width:90px;
+
+    height:2px;
+
+    margin:25px auto;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.45);
+
+}
+
+/* ==========================
+   Polaroid
+========================== */
+
+.polaroid{
+
+    background:var(--paper);
+
+    padding:14px 14px 34px;
+
+    box-shadow:var(--shadow-medium);
+
+    transition:var(--transition);
+
+    position:relative;
+
+}
+
+.polaroid:hover{
+
+    transform:translateY(-8px) rotate(0deg);
+
+}
+
+.polaroid img{
+
+    width:100%;
+
+    display:block;
+
+}
+
+.polaroid span{
+
+    display:block;
+
+    margin-top:15px;
+
+    text-align:center;
+
+    color:var(--coffee);
+
+}
+
+/* ==========================
+   Notebook Page
+========================== */
+
+.notebook-page{
+
+    background:var(--paper);
+
+    border-radius:var(--radius-medium);
+
+    color:var(--text-dark);
+
+    box-shadow:var(--shadow-large);
+
+    padding:45px;
+
+    position:relative;
+
+}
+
+.notebook-page::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    opacity:.05;
+
+    pointer-events:none;
+
+    background-image:
+
+    radial-gradient(circle,#000 1px,transparent 1px);
+
+    background-size:14px 14px;
+
+}
+
+/* ==========================
+   Toast
+========================== */
+
+.toast{
+
+    position:fixed;
+
+    top:30px;
+
+    left:50%;
+
+    transform:translateX(-50%) translateY(-20px);
+
+    background:rgba(255,255,255,.15);
+
+    border:1px solid rgba(255,255,255,.20);
+
+    backdrop-filter:blur(18px);
+
+    padding:15px 30px;
+
+    border-radius:var(--radius-round);
+
+    color:white;
+
+    opacity:0;
+
+    transition:.4s;
+
+    z-index:99999;
+
+}
+
+.toast.show{
+
+    opacity:1;
+
+    transform:translateX(-50%) translateY(0);
+
+}
+
+/* ==========================
+   Mouse Glow
+========================== */
+
+#mouseGlow{
+
+    width:260px;
+
+    height:260px;
+
+    position:fixed;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    transform:translate(-50%,-50%);
+
+    background:
+
+    radial-gradient(circle,
+
+    rgba(255,255,255,.15),
+
+    transparent 70%);
+
+    z-index:9999;
+
+}
+
+/* ==========================
+   Ripple
+========================== */
+
+.ripple{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.5);
+
+    transform:translate(-50%,-50%) scale(0);
+
+    animation:ripple .6s linear;
+
+}
+
+@keyframes ripple{
+
+    to{
+
+        transform:translate(-50%,-50%) scale(18);
+
+        opacity:0;
+
+    }
+
+}
+
+/* ==========================
+   Loading Screen
+========================== */
+
+#loader{
+
+    position:fixed;
+
+    inset:0;
+
+    background:linear-gradient(
+
+        #4B3528,
+
+        #2E2119
+
+    );
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:20px;
+
+    z-index:999999;
+
+    transition:.8s;
+
+}
+
+#loader.hidden{
+
+    opacity:0;
+
+    visibility:hidden;
+
+}
+
+.loader-flower{
+
+    font-size:70px;
+
+    animation:float 3s ease-in-out infinite;
+
+}
+
+.loader-title{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:42px;
+
+}
+
+.loader-text{
+
+    opacity:.8;
+
+}
+
+.loader-bar{
+
+    width:260px;
+
+    height:10px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.15);
+
+    overflow:hidden;
+
+}
+
+.loader-progress{
+
+    height:100%;
+
+    width:0%;
+
+    background:var(--gold);
+
+    animation:loading 2.4s forwards;
+
+}
+
+@keyframes loading{
+
+    from{
+
+        width:0;
+
+    }
+
+    to{
+
+        width:100%;
+
+    }
+
+}
+
+/* ==========================
+   Footer
+========================== */
+
+.site-footer{
+
+    text-align:center;
+
+    padding:35px;
+
+    opacity:.75;
+
+    font-size:14px;
+
+}
+
+/* ==========================
+   Focus
+========================== */
+
+button:focus-visible,
+a:focus-visible{
+
+    outline:3px solid var(--gold);
+
+    outline-offset:4px;
+
+}
+
+/* ==========================
+   Reduced Motion
+========================== */
+
+@media (prefers-reduced-motion: reduce){
+
+*{
+
+    animation:none !important;
+
+    transition:none !important;
+
+    scroll-behavior:auto !important;
+
+}
+
+}

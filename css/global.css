@@ -1,0 +1,291 @@
+/* ==========================================================
+   My Little Corner
+   Global Styles
+========================================================== */
+
+/* ==========================
+   Google Fonts
+========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;600;700&display=swap');
+
+/* ==========================
+   Theme Variables
+========================== */
+
+:root{
+
+    /* Colors */
+
+    --cream:#F8F2E8;
+    --paper:#FFFDF9;
+    --coffee:#5A4030;
+    --coffee-light:#8B6849;
+    --rose:#DDBBC7;
+    --sage:#A7C4A0;
+    --gold:#D7B25E;
+    --night:#0F172A;
+
+    /* Text */
+
+    --text-dark:#4B3A2F;
+    --text-light:#FFFFFF;
+
+    /* Glass */
+
+    --glass:rgba(255,255,255,.12);
+    --glass-border:rgba(255,255,255,.15);
+
+    /* Shadows */
+
+    --shadow-small:0 8px 18px rgba(0,0,0,.15);
+
+    --shadow-medium:0 18px 35px rgba(0,0,0,.25);
+
+    --shadow-large:0 30px 60px rgba(0,0,0,.35);
+
+    /* Radius */
+
+    --radius-small:12px;
+
+    --radius-medium:20px;
+
+    --radius-large:30px;
+
+    --radius-round:999px;
+
+    /* Animation */
+
+    --transition:.30s ease;
+
+}
+
+/* ==========================
+   Reset
+========================== */
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:"Poppins",sans-serif;
+
+    color:var(--text-light);
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+}
+
+/* ==========================
+   Typography
+========================== */
+
+h1,h2,h3{
+
+    font-family:"Playfair Display",serif;
+
+    font-weight:700;
+
+}
+
+.handwriting{
+
+    font-family:"Caveat",cursive;
+
+}
+
+/* ==========================
+   Images
+========================== */
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+}
+
+/* ==========================
+   Links
+========================== */
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+/* ==========================
+   Buttons
+========================== */
+
+button{
+
+    font-family:"Poppins",sans-serif;
+
+}
+
+/* ==========================
+   Selection
+========================== */
+
+::selection{
+
+    background:var(--gold);
+
+    color:white;
+
+}
+
+/* ==========================
+   Scrollbar
+========================== */
+
+::-webkit-scrollbar{
+
+    width:12px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#E8DDD2;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--coffee-light);
+
+    border-radius:999px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--coffee);
+
+}
+
+/* ==========================
+   Fade In
+========================== */
+
+.fadeIn{
+
+    animation:fadeIn .8s ease;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================
+   Fade Out
+========================== */
+
+.fadeOut{
+
+    animation:fadeOut .5s forwards;
+
+}
+
+@keyframes fadeOut{
+
+    to{
+
+        opacity:0;
+
+        filter:blur(6px);
+
+    }
+
+}
+
+/* ==========================
+   Floating
+========================== */
+
+.float{
+
+    animation:float 4s ease-in-out infinite;
+
+}
+
+@keyframes float{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+}
+
+/* ==========================
+   Utility Classes
+========================== */
+
+.center{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.hidden{
+
+    display:none !important;
+
+}
+
+.text-center{
+
+    text-align:center;
+
+}
