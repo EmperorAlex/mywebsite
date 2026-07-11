@@ -1,7 +1,8 @@
 /* ==========================================================
    My Little Corner
-   Elegant Tea Room Theme
-========================================================== */
+   Version 2.0
+   Cozy Tea Room Theme
+==========================================================*/
 
 /* ---------- RESET ---------- */
 
@@ -19,23 +20,13 @@ body{
 
     font-family:"Poppins",sans-serif;
 
-    color:#5A4033;
+    background:url("../images/background1.jpg") center center / cover no-repeat fixed;
 
-    background:#4A3427;
-
-    background-image:url("../images/hero.jpg");
-
-    background-size:cover;
-
-    background-position:center;
-
-    background-repeat:no-repeat;
-
-    background-attachment:fixed;
-
-    overflow:hidden;
+    color:#4b3a32;
 
     min-height:100vh;
+
+    overflow:hidden;
 
 }
 
@@ -43,65 +34,62 @@ body{
 
 .overlay{
 
-    position:relative;
-
     width:100%;
-
     height:100vh;
 
     display:flex;
-
     justify-content:center;
-
     align-items:center;
 
-    overflow:hidden;
+    position:relative;
 
-    background:
-    linear-gradient(
-        rgba(44,28,18,.52),
-        rgba(44,28,18,.60)
+    background:linear-gradient(
+
+        rgba(45,30,20,.45),
+
+        rgba(35,22,15,.58)
+
     );
 
 }
 
-/* ---------- WELCOME CARD ---------- */
+/* ---------- CARD ---------- */
 
 .welcome-card{
 
     position:relative;
 
-    overflow:visible;
-
-    width:860px;
+    width:820px;
 
     max-width:92%;
 
-    padding:90px 90px 120px;
-
-    border-radius:26px;
+    padding:70px 80px;
 
     text-align:center;
 
-    background:
-        linear-gradient(
-            rgba(255,251,244,.96),
-            rgba(251,245,236,.94)
-        );
+    border-radius:28px;
 
-    border:1px solid rgba(150,110,82,.20);
+    background:
+
+        linear-gradient(
+
+            #fffdf9,
+
+            #f8f1e8
+
+        );
 
     box-shadow:
 
-        0 25px 60px rgba(0,0,0,.35),
+        0 25px 60px rgba(0,0,0,.28),
 
-        inset 0 0 80px rgba(187,145,110,.10);
+        inset 0 0 0 1px rgba(255,255,255,.8),
 
-    animation:fadeUp .9s ease;
+        inset 0 0 60px rgba(212,184,160,.18);
 
 }
 
-/* subtle paper glow */
+/* subtle inner border */
 
 .welcome-card::before{
 
@@ -111,7 +99,7 @@ body{
 
     inset:12px;
 
-    border:1px solid rgba(130,90,60,.18);
+    border:1px solid rgba(175,145,120,.25);
 
     border-radius:18px;
 
@@ -119,67 +107,137 @@ body{
 
 }
 
-/* ---------- LACE ---------- */
+/* ---------- DECORATIVE CORNERS ---------- */
 
-.lace{
+.corner{
 
     position:absolute;
 
-    width:220px;
+    width:55px;
 
-    opacity:.35;
-
-    pointer-events:none;
-
-    user-select:none;
+    height:55px;
 
 }
 
-.lace-left{
+.corner::before{
 
-    top:-6px;
+    content:"❦";
 
-    left:-6px;
+    position:absolute;
 
-}
+    color:#c7a26f;
 
-.lace-right{
-
-    top:-6px;
-
-    right:-6px;
+    font-size:24px;
 
 }
 
-/* ---------- HEADER ---------- */
+/* Top Left */
+
+.corner-top-left{
+
+    top:18px;
+
+    left:18px;
+
+}
+
+.corner-top-left::before{
+
+    left:0;
+
+    top:0;
+
+}
+
+/* Top Right */
+
+.corner-top-right{
+
+    top:18px;
+
+    right:18px;
+
+}
+
+.corner-top-right::before{
+
+    right:0;
+
+    top:0;
+
+    transform:scaleX(-1);
+
+}
+
+/* Bottom Left */
+
+.corner-bottom-left{
+
+    bottom:18px;
+
+    left:18px;
+
+}
+
+.corner-bottom-left::before{
+
+    left:0;
+
+    bottom:0;
+
+    transform:rotate(180deg);
+
+}
+
+/* Bottom Right */
+
+.corner-bottom-right{
+
+    bottom:18px;
+
+    right:18px;
+
+}
+
+.corner-bottom-right::before{
+
+    right:0;
+
+    bottom:0;
+
+    transform:rotate(180deg) scaleX(-1);
+
+}
+
+/* ---------- WELCOME ---------- */
 
 .welcome-small{
 
-    font-size:14px;
-
-    letter-spacing:4px;
+    font-size:13px;
 
     text-transform:uppercase;
 
-    color:#7E6455;
+    letter-spacing:3px;
 
-    margin-bottom:28px;
+    color:#927667;
+
+    margin-bottom:18px;
 
 }
+
+/* ---------- TITLE ---------- */
 
 h1{
 
     font-family:"Playfair Display",serif;
 
-    font-size:78px;
-
-    line-height:1.05;
+    font-size:64px;
 
     font-weight:600;
 
-    color:#5A382C;
+    color:#5a4030;
 
-    margin-bottom:18px;
+    line-height:1.15;
 
 }
 
@@ -187,11 +245,36 @@ h1{
 
 .divider{
 
-    display:block;
+    display:flex;
 
-    width:280px;
+    align-items:center;
 
-    margin:0 auto 35px;
+    justify-content:center;
+
+    margin:28px auto 34px;
+
+}
+
+.divider::before,
+.divider::after{
+
+    content:"";
+
+    width:120px;
+
+    height:1px;
+
+    background:#c8a16b;
+
+}
+
+.divider span{
+
+    margin:0 18px;
+
+    color:#c8a16b;
+
+    font-size:22px;
 
 }
 
@@ -199,17 +282,17 @@ h1{
 
 .maid-greeting{
 
-    width:90%;
+    width:88%;
 
-    margin:0 auto 42px;
+    margin:0 auto 35px;
 
-    font-size:22px;
+    font-size:20px;
 
     font-style:italic;
 
-    line-height:1.7;
+    color:#8b6c5c;
 
-    color:#8D6C5D;
+    line-height:1.8;
 
 }
 
@@ -217,286 +300,14 @@ h1{
 
 .description{
 
-    width:88%;
+    width:85%;
 
-    margin:0 auto 55px;
+    margin:0 auto 45px;
 
     line-height:2;
 
-    font-size:21px;
+    font-size:19px;
 
-    color:#60483B;
-
-}
-
-/* ---------- BUTTON ---------- */
-
-#beginButton{
-
-    padding:20px 62px;
-
-    border:none;
-
-    border-radius:999px;
-
-    background:#A57355;
-
-    color:white;
-
-    font-size:20px;
-
-    font-weight:600;
-
-    cursor:pointer;
-
-    transition:.35s;
-
-    box-shadow:
-
-        0 14px 35px rgba(80,40,20,.22);
-
-}
-
-#beginButton:hover{
-
-    transform:translateY(-4px);
-
-    background:#B37C5A;
-
-}
-
-/* ---------- HEADPHONES ---------- */
-
-.headphones{
-
-    margin-top:34px;
-
-    color:#8A7367;
-
-    font-size:15px;
-
-}
-
-/* ---------- DECORATIONS ---------- */
-
-.leaf-decoration{
-
-    position:absolute;
-
-    width:190px;
-
-    right:42px;
-
-    bottom:48px;
-
-    z-index:1;
-
-    opacity:.9;
-
-}
-
-.teacup-decoration{
-
-    position:absolute;
-
-    width:240px;
-
-    right:-38px;
-
-    bottom:-45px;
-
-    z-index:3;
-
-}
-
-/* ---------- SCROLL ---------- */
-
-.scroll-indicator{
-
-    position:absolute;
-
-    bottom:30px;
-
-    left:50%;
-
-    transform:translateX(-50%);
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    gap:8px;
-
-    color:white;
-
-    opacity:.75;
-
-    animation:bounce 2s infinite;
-
-}
-
-.scroll-indicator span{
-
-    font-size:13px;
-
-    letter-spacing:2px;
-
-}
-
-.arrow{
-
-    font-size:22px;
-
-}
-
-/* ---------- FOOTER ---------- */
-
-footer{
-
-    position:absolute;
-
-    bottom:12px;
-
-    left:50%;
-
-    transform:translateX(-50%);
-
-    color:white;
-
-    opacity:.55;
-
-    font-size:13px;
-
-}
-
-/* ---------- CURSOR ---------- */
-
-#cursor-glow{
-
-    position:fixed;
-
-    width:250px;
-
-    height:250px;
-
-    left:0;
-
-    top:0;
-
-    transform:translate(-50%,-50%);
-
-    pointer-events:none;
-
-    border-radius:50%;
-
-    background:
-
-    radial-gradient(circle,
-
-        rgba(255,220,170,.24),
-
-        transparent 70%);
-
-    z-index:999;
-
-}
-
-/* ---------- PARTICLES ---------- */
-
-#particles{
-
-    position:absolute;
-
-    inset:0;
-
-    pointer-events:none;
-
-}
-
-/* ---------- ANIMATION ---------- */
-
-@keyframes fadeUp{
-
-    from{
-
-        opacity:0;
-
-        transform:translateY(25px);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:translateY(0);
-
-    }
-
-}
-
-@keyframes bounce{
-
-    0%,100%{
-
-        transform:translate(-50%,0);
-
-    }
-
-    50%{
-
-        transform:translate(-50%,8px);
-
-    }
-
-}
-
-/* ---------- MOBILE ---------- */
-
-@media(max-width:900px){
-
-    .welcome-card{
-
-        padding:70px 45px 120px;
-
-    }
-
-    h1{
-
-        font-size:56px;
-
-    }
-
-    .maid-greeting{
-
-        font-size:18px;
-
-    }
-
-    .description{
-
-        font-size:18px;
-
-    }
-
-    .teacup-decoration{
-
-        width:170px;
-
-    }
-
-    .leaf-decoration{
-
-        width:130px;
-
-    }
-
-    .lace{
-
-        width:150px;
-
-    }
+    color:#5d4639;
 
 }
