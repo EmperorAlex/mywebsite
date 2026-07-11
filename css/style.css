@@ -70,7 +70,7 @@ body{
 /* ---------- GLASS CARD ---------- */
 
 .welcome-card{
-    
+
     width:720px;
     max-width:90%;
 
@@ -167,15 +167,13 @@ h1::after{
 
 .divider{
 
-    width:90px;
+    width:180px;
 
-    height:2px;
+    height:18px;
 
-    background:linear-gradient(90deg,transparent,#CBA38A,transparent);
+    margin:25px auto 40px;
 
-    margin:0 auto 35px auto;
-
-    border-radius:50px;
+    background:url("../images/divider.svg") center/contain no-repeat;
 
 }
 
@@ -271,48 +269,69 @@ footer{
 
 }
 
-/* ---------- FLOWERS ---------- */
+/* Decorative Images */
 
-.flower{
+.lace{
 
     position:absolute;
-    user-select:none;
+
+    top:0;
+
+    width:170px;
+
+    opacity:.22;
+
     pointer-events:none;
 
-    animation:float 7s ease-in-out infinite;
+    user-select:none;
 
 }
 
-.flower img{
+.lace-left{
 
-    width:70px;
-    height:auto;
-    opacity:.9;
+    left:0;
 
 }
 
-.flower1{
+.lace-right{
 
-    top:9%;
-    left:8%;
+    right:0;
 
-}
-
-.flower2{
-
-    bottom:10%;
-    left:15%;
-
-    animation-delay:2s;
+    transform:scaleX(-1);
 
 }
 
-.flower3{
+.teacup-decoration{
 
-    top:14%;
-    right:10%;
+    position:absolute;
 
-    animation-delay:4s;
+    width:150px;
+
+    right:-25px;
+
+    bottom:-18px;
+
+    z-index:2;
+
+    pointer-events:none;
+
+}
+
+.leaf-decoration{
+
+    position:absolute;
+
+    width:120px;
+
+    right:65px;
+
+    bottom:40px;
+
+    opacity:.85;
+
+    z-index:1;
+
+    pointer-events:none;
 
 }
 
