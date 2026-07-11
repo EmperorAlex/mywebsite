@@ -1,10 +1,12 @@
 /* ==========================================================
    My Little Corner
    Version 2.0
-   Cozy Tea Room Theme
+   Elegant Tea Room
 ==========================================================*/
 
-/* ---------- RESET ---------- */
+/*----------------------------------------------------------
+RESET
+----------------------------------------------------------*/
 
 *{
     margin:0;
@@ -13,16 +15,19 @@
 }
 
 html{
+
     scroll-behavior:smooth;
+
 }
 
 body{
 
     font-family:"Poppins",sans-serif;
 
-    background:url("../images/background1.jpg") center center / cover no-repeat fixed;
+    color:#4E3B32;
 
-    color:#4b3a32;
+    background:url("../images/background1.jpg")
+    center center/cover no-repeat fixed;
 
     min-height:100vh;
 
@@ -30,66 +35,113 @@ body{
 
 }
 
-/* ---------- OVERLAY ---------- */
+/*----------------------------------------------------------
+OVERLAY
+----------------------------------------------------------*/
 
 .overlay{
 
-    width:100%;
-    height:100vh;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
     position:relative;
 
-    background:linear-gradient(
+    width:100%;
 
-        rgba(45,30,20,.45),
+    min-height:100vh;
 
-        rgba(35,22,15,.58)
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:60px;
+
+    overflow:hidden;
+
+    background:
+
+    linear-gradient(
+
+        rgba(42,28,18,.35),
+
+        rgba(42,28,18,.55)
 
     );
 
 }
 
-/* ---------- CARD ---------- */
+/* soft vignette */
+
+.overlay::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    radial-gradient(
+
+        circle,
+
+        transparent 45%,
+
+        rgba(20,10,5,.30) 100%
+
+    );
+
+    pointer-events:none;
+
+}
+
+/*----------------------------------------------------------
+WELCOME CARD
+----------------------------------------------------------*/
 
 .welcome-card{
 
     position:relative;
 
-    width:820px;
+    width:900px;
 
     max-width:92%;
 
-    padding:70px 80px;
+    background:
 
-    text-align:center;
+    linear-gradient(
+
+        180deg,
+
+        #fffcf8 0%,
+
+        #fbf4ec 50%,
+
+        #f6ede3 100%
+
+    );
 
     border-radius:28px;
 
-    background:
+    padding:60px 80px;
 
-        linear-gradient(
+    text-align:center;
 
-            #fffdf9,
+    overflow:hidden;
 
-            #f8f1e8
-
-        );
+    border:1px solid rgba(175,145,120,.22);
 
     box-shadow:
 
-        0 25px 60px rgba(0,0,0,.28),
+        0 30px 70px rgba(0,0,0,.30),
 
-        inset 0 0 0 1px rgba(255,255,255,.8),
+        0 8px 18px rgba(0,0,0,.08),
 
-        inset 0 0 60px rgba(212,184,160,.18);
+        inset 0 0 70px rgba(212,185,162,.18);
 
 }
 
-/* subtle inner border */
+/* paper border */
 
 .welcome-card::before{
 
@@ -97,25 +149,27 @@ body{
 
     position:absolute;
 
-    inset:12px;
-
-    border:1px solid rgba(175,145,120,.25);
+    inset:14px;
 
     border-radius:18px;
+
+    border:1px solid rgba(170,140,118,.22);
 
     pointer-events:none;
 
 }
 
-/* ---------- DECORATIVE CORNERS ---------- */
+/*----------------------------------------------------------
+DECORATIVE CORNERS
+----------------------------------------------------------*/
 
 .corner{
 
     position:absolute;
 
-    width:55px;
+    width:34px;
 
-    height:55px;
+    height:34px;
 
 }
 
@@ -125,13 +179,15 @@ body{
 
     position:absolute;
 
-    color:#c7a26f;
+    color:#C69C63;
 
     font-size:24px;
 
+    line-height:1;
+
 }
 
-/* Top Left */
+/* top left */
 
 .corner-top-left{
 
@@ -141,15 +197,7 @@ body{
 
 }
 
-.corner-top-left::before{
-
-    left:0;
-
-    top:0;
-
-}
-
-/* Top Right */
+/* top right */
 
 .corner-top-right{
 
@@ -161,15 +209,11 @@ body{
 
 .corner-top-right::before{
 
-    right:0;
-
-    top:0;
-
     transform:scaleX(-1);
 
 }
 
-/* Bottom Left */
+/* bottom left */
 
 .corner-bottom-left{
 
@@ -181,15 +225,11 @@ body{
 
 .corner-bottom-left::before{
 
-    left:0;
-
-    bottom:0;
-
     transform:rotate(180deg);
 
 }
 
-/* Bottom Right */
+/* bottom right */
 
 .corner-bottom-right{
 
@@ -201,61 +241,70 @@ body{
 
 .corner-bottom-right::before{
 
-    right:0;
-
-    bottom:0;
-
     transform:rotate(180deg) scaleX(-1);
 
 }
 
-/* ---------- WELCOME ---------- */
+/*----------------------------------------------------------
+HEADER
+----------------------------------------------------------*/
 
-.welcome-small{
+.hero-header{
 
-    font-size:13px;
-
-    text-transform:uppercase;
-
-    letter-spacing:3px;
-
-    color:#927667;
-
-    margin-bottom:18px;
+    margin-bottom:40px;
 
 }
 
-/* ---------- TITLE ---------- */
+.welcome-small{
+
+    text-transform:uppercase;
+
+    letter-spacing:5px;
+
+    font-size:14px;
+
+    color:#957564;
+
+    margin-bottom:20px;
+
+}
 
 h1{
 
     font-family:"Playfair Display",serif;
 
-    font-size:64px;
+    font-size:66px;
 
     font-weight:600;
 
-    color:#5a4030;
+    line-height:1.1;
 
-    line-height:1.15;
+    letter-spacing:.4px;
+
+    color:#5B3D2F;
+
+    margin-bottom:24px;
 
 }
 
-/* ---------- DIVIDER ---------- */
+/*----------------------------------------------------------
+DIVIDER
+----------------------------------------------------------*/
 
 .divider{
 
     display:flex;
 
-    align-items:center;
-
     justify-content:center;
 
-    margin:28px auto 34px;
+    align-items:center;
+
+    gap:18px;
 
 }
 
 .divider::before,
+
 .divider::after{
 
     content:"";
@@ -264,17 +313,441 @@ h1{
 
     height:1px;
 
-    background:#c8a16b;
+    background:#C9A56E;
 
 }
 
 .divider span{
 
-    margin:0 18px;
-
-    color:#c8a16b;
+    color:#C9A56E;
 
     font-size:22px;
+
+}
+
+/*----------------------------------------------------------
+INTRO
+----------------------------------------------------------*/
+
+.intro{
+
+    max-width:700px;
+
+    margin:0 auto;
+
+}
+
+.maid-greeting{
+
+    font-size:19px;
+
+    line-height:1.9;
+
+    font-style:italic;
+
+    color:#8C6B5A;
+
+    margin-bottom:42px;
+
+}
+
+.description{
+
+    font-size:21px;
+
+    line-height:2;
+
+    color:#5D4639;
+
+}
+
+/*==========================================================
+BUTTON
+==========================================================*/
+
+.button-wrapper{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-top:60px;
+
+}
+
+#beginButton{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:16px;
+
+    min-width:280px;
+
+    padding:18px 42px;
+
+    border:none;
+
+    border-radius:999px;
+
+    background:linear-gradient(
+
+        180deg,
+
+        #A97A58,
+
+        #8F6246
+
+    );
+
+    color:#fff;
+
+    font-family:"Poppins",sans-serif;
+
+    font-size:20px;
+
+    font-weight:600;
+
+    letter-spacing:.4px;
+
+    cursor:pointer;
+
+    transition:
+
+        transform .35s ease,
+
+        box-shadow .35s ease,
+
+        background .35s ease;
+
+    box-shadow:
+
+        0 14px 28px rgba(70,40,20,.25),
+
+        inset 0 1px 1px rgba(255,255,255,.25);
+
+}
+
+#beginButton:hover{
+
+    transform:translateY(-5px);
+
+    background:linear-gradient(
+
+        180deg,
+
+        #B98964,
+
+        #9B6B4B
+
+    );
+
+    box-shadow:
+
+        0 20px 40px rgba(70,40,20,.35);
+
+}
+
+#beginButton:active{
+
+    transform:translateY(-1px);
+
+}
+
+#beginButton .arrow{
+
+    transition:transform .30s ease;
+
+}
+
+#beginButton:hover .arrow{
+
+    transform:translateX(6px);
+
+}
+
+/*==========================================================
+HEADPHONE NOTE
+==========================================================*/
+
+.headphones{
+
+    margin-top:28px;
+
+    font-size:15px;
+
+    color:#8D7263;
+
+    letter-spacing:.3px;
+
+}
+
+/*==========================================================
+FOOTER
+==========================================================*/
+
+footer{
+
+    position:fixed;
+
+    bottom:18px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    font-size:13px;
+
+    color:rgba(255,255,255,.70);
+
+    letter-spacing:1px;
+
+    z-index:50;
+
+}
+
+/*==========================================================
+SCROLL INDICATOR
+==========================================================*/
+
+.scroll-indicator{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:38px;
+
+    transform:translateX(-50%);
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:white;
+
+    opacity:.75;
+
+    animation:floatArrow 2.5s ease-in-out infinite;
+
+}
+
+.scroll-indicator span{
+
+    font-size:13px;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+}
+
+.scroll-arrow{
+
+    font-size:24px;
+
+}
+
+/*==========================================================
+CURSOR GLOW
+==========================================================*/
+
+#cursor-glow{
+
+    position:fixed;
+
+    width:260px;
+
+    height:260px;
+
+    left:0;
+
+    top:0;
+
+    pointer-events:none;
+
+    border-radius:50%;
+
+    transform:translate(-50%,-50%);
+
+    background:
+
+    radial-gradient(
+
+        circle,
+
+        rgba(255,230,190,.20),
+
+        rgba(255,230,190,.08),
+
+        transparent 70%
+
+    );
+
+    z-index:999;
+
+}
+
+/*==========================================================
+PARTICLES
+==========================================================*/
+
+#particles{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+}
+
+#particles::before,
+
+#particles::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:3px;
+
+    height:3px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.35);
+
+    box-shadow:
+
+        140px 80px rgba(255,255,255,.25),
+
+        320px 180px rgba(255,255,255,.20),
+
+        520px 90px rgba(255,255,255,.18),
+
+        760px 250px rgba(255,255,255,.22),
+
+        920px 120px rgba(255,255,255,.15),
+
+        1080px 300px rgba(255,255,255,.18),
+
+        1300px 180px rgba(255,255,255,.25),
+
+        1500px 90px rgba(255,255,255,.15);
+
+    animation:drift 18s linear infinite;
+
+}
+
+#particles::after{
+
+    animation-duration:26s;
+
+    opacity:.6;
+
+}
+
+/*==========================================================
+ANIMATIONS
+==========================================================*/
+
+@keyframes floatArrow{
+
+    0%{
+
+        transform:translate(-50%,0);
+
+    }
+
+    50%{
+
+        transform:translate(-50%,8px);
+
+    }
+
+    100%{
+
+        transform:translate(-50%,0);
+
+    }
+
+}
+
+@keyframes drift{
+
+    from{
+
+        transform:translateY(0);
+
+    }
+
+    to{
+
+        transform:translateY(-40px);
+
+    }
+
+}
+
+/*==========================================================
+PART 3
+PREMIUM POLISH
+==========================================================*/
+
+/* ---------- CARD ENTRANCE ---------- */
+
+.welcome-card{
+
+    animation:cardAppear 1.2s ease;
+}
+
+/* ---------- PAPER DEPTH ---------- */
+
+.welcome-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:28px;
+
+    pointer-events:none;
+
+    background:
+
+        radial-gradient(circle at top left,
+            rgba(255,255,255,.55),
+            transparent 35%),
+
+        radial-gradient(circle at bottom right,
+            rgba(210,180,150,.12),
+            transparent 40%);
+
+}
+
+/* ---------- TITLE ---------- */
+
+h1{
+
+    transition:color .35s ease;
+
+}
+
+.welcome-card:hover h1{
+
+    color:#704E3C;
 
 }
 
@@ -282,17 +755,13 @@ h1{
 
 .maid-greeting{
 
-    width:88%;
+    transition:opacity .35s ease;
 
-    margin:0 auto 35px;
+}
 
-    font-size:20px;
+.welcome-card:hover .maid-greeting{
 
-    font-style:italic;
-
-    color:#8b6c5c;
-
-    line-height:1.8;
+    opacity:.95;
 
 }
 
@@ -300,14 +769,324 @@ h1{
 
 .description{
 
-    width:85%;
+    transition:transform .4s ease;
 
-    margin:0 auto 45px;
+}
 
-    line-height:2;
+.welcome-card:hover .description{
 
-    font-size:19px;
+    transform:translateY(-2px);
 
-    color:#5d4639;
+}
+
+/* ---------- BUTTON ---------- */
+
+#beginButton{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+#beginButton::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:70%;
+
+    height:100%;
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            transparent,
+
+            rgba(255,255,255,.35),
+
+            transparent
+
+        );
+
+    transform:skewX(-25deg);
+
+}
+
+#beginButton:hover::before{
+
+    animation:buttonShine .9s ease;
+
+}
+
+/* ---------- DIVIDER ---------- */
+
+.divider{
+
+    opacity:.95;
+
+    transition:all .35s ease;
+
+}
+
+.welcome-card:hover .divider{
+
+    transform:scale(1.03);
+
+}
+
+/* ---------- CORNERS ---------- */
+
+.corner{
+
+    transition:transform .4s ease;
+
+}
+
+.welcome-card:hover .corner-top-left{
+
+    transform:translate(-2px,-2px);
+
+}
+
+.welcome-card:hover .corner-top-right{
+
+    transform:translate(2px,-2px);
+
+}
+
+.welcome-card:hover .corner-bottom-left{
+
+    transform:translate(-2px,2px);
+
+}
+
+.welcome-card:hover .corner-bottom-right{
+
+    transform:translate(2px,2px);
+
+}
+
+/* ---------- CARD HOVER ---------- */
+
+.welcome-card{
+
+    transition:
+
+        transform .45s ease,
+
+        box-shadow .45s ease;
+
+}
+
+.welcome-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+
+        0 42px 85px rgba(0,0,0,.30),
+
+        0 10px 22px rgba(0,0,0,.12),
+
+        inset 0 0 70px rgba(225,200,175,.20);
+
+}
+
+/* ---------- BUTTON FOCUS ---------- */
+
+#beginButton:focus-visible{
+
+    outline:none;
+
+    box-shadow:
+
+        0 0 0 5px rgba(200,165,110,.35),
+
+        0 18px 35px rgba(0,0,0,.22);
+
+}
+
+/* ---------- SELECTION ---------- */
+
+::selection{
+
+    background:#C9A56E;
+
+    color:white;
+
+}
+
+/* ---------- SCROLL ---------- */
+
+.scroll-indicator{
+
+    transition:opacity .35s ease;
+
+}
+
+.scroll-indicator:hover{
+
+    opacity:1;
+
+}
+
+/* ---------- FOOTER ---------- */
+
+footer{
+
+    transition:opacity .3s ease;
+
+}
+
+footer:hover{
+
+    opacity:1;
+
+}
+
+/*==========================================================
+RESPONSIVE
+==========================================================*/
+
+@media(max-width:900px){
+
+    .welcome-card{
+
+        width:92%;
+
+        padding:45px;
+
+    }
+
+    h1{
+
+        font-size:48px;
+
+    }
+
+    .divider::before,
+
+    .divider::after{
+
+        width:70px;
+
+    }
+
+    .description{
+
+        font-size:18px;
+
+    }
+
+}
+
+@media(max-width:650px){
+
+    .overlay{
+
+        padding:20px;
+
+    }
+
+    .welcome-card{
+
+        padding:35px 25px;
+
+    }
+
+    h1{
+
+        font-size:38px;
+
+    }
+
+    .maid-greeting{
+
+        font-size:17px;
+
+    }
+
+    .description{
+
+        font-size:16px;
+
+        line-height:1.8;
+
+    }
+
+    .divider::before,
+
+    .divider::after{
+
+        width:45px;
+
+    }
+
+    .corner{
+
+        display:none;
+
+    }
+
+    #beginButton{
+
+        width:100%;
+
+    }
+
+    .scroll-indicator{
+
+        display:none;
+
+    }
+
+}
+
+/*==========================================================
+KEYFRAMES
+==========================================================*/
+
+@keyframes cardAppear{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px) scale(.98);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0) scale(1);
+
+    }
+
+}
+
+@keyframes buttonShine{
+
+    from{
+
+        left:-120%;
+
+    }
+
+    to{
+
+        left:150%;
+
+    }
 
 }
