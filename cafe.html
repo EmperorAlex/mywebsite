@@ -3,15 +3,19 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Little Corner Café</title>
+    <title>Little Corner Café | My Little Corner</title>
 
-<link rel="stylesheet" href="css/cafe.css">
+    <link rel="stylesheet" href="../css/cafe.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 </head>
 
@@ -19,101 +23,234 @@
 
 <div class="overlay">
 
-<div class="container">
+    <!-- Navigation -->
 
-<h1>Little Corner Café</h1>
+    <nav>
 
-<p class="subtitle">
-What would you like today?
-</p>
+        <a href="../index.html" class="backButton">
 
-<div class="cards">
+            ← Home
 
-<div class="card">
+        </a>
 
-<div class="emoji">☕</div>
+        <div class="logo">
 
-<h2>Journal</h2>
+            ☕ My Little Corner
 
-<p>
-A warm cup and today's thoughts.
-</p>
+        </div>
 
-<button onclick="location.href='journal.html'">
-Open
-</button>
+    </nav>
+
+    <!-- Hero -->
+
+    <header>
+
+        <p class="smallTitle">
+
+            Welcome
+
+        </p>
+
+        <h1>
+
+            Little Corner Café
+
+        </h1>
+
+        <div class="divider"></div>
+
+        <p class="subtitle">
+
+            What would you like today?
+
+        </p>
+
+    </header>
+
+    <!-- Cards -->
+
+    <main class="cardContainer">
+
+        <!-- Journal -->
+
+        <section class="card">
+
+            <div class="icon">
+
+                📖
+
+            </div>
+
+            <h2>
+
+                Journal
+
+            </h2>
+
+            <p>
+
+                Read today's thoughts,
+                memories, and little stories.
+
+            </p>
+
+            <button onclick="goTo('journal.html')">
+
+                Open →
+
+            </button>
+
+        </section>
+
+        <!-- Friends -->
+
+        <section class="card">
+
+            <div class="icon">
+
+                🌸
+
+            </div>
+
+            <h2>
+
+                Friend Profiles
+
+            </h2>
+
+            <p>
+
+                Meet the wonderful people
+                who make this little corner warm.
+
+            </p>
+
+            <button onclick="goTo('profiles.html')">
+
+                Visit →
+
+            </button>
+
+        </section>
+
+        <!-- Surprise -->
+
+        <section class="card">
+
+            <div class="icon">
+
+                🎲
+
+            </div>
+
+            <h2>
+
+                Surprise Me
+
+            </h2>
+
+            <p>
+
+                Every visit reveals
+                something unexpected.
+
+            </p>
+
+            <button onclick="goTo('surprise.html')">
+
+                Try →
+
+            </button>
+
+        </section>
+
+        <!-- Garden -->
+
+        <section class="card">
+
+            <div class="icon">
+
+                🌿
+
+            </div>
+
+            <h2>
+
+                Secret Garden
+
+            </h2>
+
+            <p>
+
+                Wander through flowers,
+                moonlight and hidden paths.
+
+            </p>
+
+            <button onclick="goTo('garden.html')">
+
+                Explore →
+
+            </button>
+
+        </section>
+
+        <!-- Music -->
+
+        <section class="card">
+
+            <div class="icon">
+
+                🎵
+
+            </div>
+
+            <h2>
+
+                Music Room
+
+            </h2>
+
+            <p>
+
+                Relax, listen,
+                and stay awhile.
+
+            </p>
+
+            <button onclick="goTo('music.html')">
+
+                Listen →
+
+            </button>
+
+        </section>
+
+    </main>
+
+    <!-- Quote -->
+
+    <section class="quote">
+
+        <p>
+
+            "Every cozy corner begins with a warm welcome."
+
+        </p>
+
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+
+        Made with warmth • My Little Corner
+
+    </footer>
 
 </div>
 
-<div class="card">
-
-<div class="emoji">🌸</div>
-
-<h2>Friend Profiles</h2>
-
-<p>
-Meet the wonderful people behind the memories.
-</p>
-
-<button onclick="location.href='profiles.html'">
-Visit
-</button>
-
-</div>
-
-<div class="card">
-
-<div class="emoji">🎲</div>
-
-<h2>Random Surprise</h2>
-
-<p>
-Who knows what you'll discover?
-</p>
-
-<button onclick="location.href='random.html'">
-Try
-</button>
-
-</div>
-
-<div class="card">
-
-<div class="emoji">🌿</div>
-
-<h2>Secret Garden</h2>
-
-<p>
-A quiet place hidden among the flowers.
-</p>
-
-<button onclick="location.href='garden.html'">
-Explore
-</button>
-
-</div>
-
-<div class="card">
-
-<div class="emoji">🎵</div>
-
-<h2>Music Corner</h2>
-
-<p>
-Relax and stay for a little while.
-</p>
-
-<button onclick="location.href='music.html'">
-Listen
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
+<script src="../js/cafe.js"></script>
 
 </body>
 
