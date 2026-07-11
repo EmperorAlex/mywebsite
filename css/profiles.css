@@ -198,6 +198,13 @@ header p{
 
 }
 
+.polaroid:nth-child(7){
+
+    transform:rotate(5deg);
+
+    
+}
+
 .polaroid:hover{
 
     transform:translateY(-12px) scale(1.05) rotate(0deg);
