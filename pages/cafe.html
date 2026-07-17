@@ -10,6 +10,7 @@
     <title>Little Corner Café | My Little Corner</title>
 
     <link rel="stylesheet" href="../css/cafe.css">
+    <link rel="stylesheet" href="../css/cafe-radio.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -17,8 +18,6 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="../css/cafe-radio.css">
-    
 </head>
 
 <body>
@@ -27,11 +26,11 @@
 
     <!-- Navigation -->
 
-    <nav>
+    <nav class="navbar">
 
         <a href="../index.html" class="backButton">
 
-            ← Home
+            ← Return to Entrance
 
         </a>
 
@@ -45,11 +44,11 @@
 
     <!-- Hero -->
 
-    <header>
+    <header class="hero">
 
-        <p class="smallTitle">
+        <p class="welcome-small">
 
-            Welcome
+            Welcome home, dear guest.
 
         </p>
 
@@ -59,133 +58,83 @@
 
         </h1>
 
-        <div class="divider"></div>
+        <div class="divider">
+
+            <span>❦</span>
+
+        </div>
 
         <p class="subtitle">
 
-            What would you like today?
+            Please stay awhile.
+
+            <br><br>
+
+            The kettle is warm and today's menu is ready.
 
         </p>
 
     </header>
 
-    <!-- Cards -->
+    <!-- Main Menu -->
 
-    <main class="cardContainer">
+    <main class="menu">
 
-        <!-- Journal -->
+        <section class="menu-card">
 
-        <section class="card">
+            <div class="menu-icon">📖</div>
 
-            <div class="icon">
-
-                📖
-
-            </div>
-
-            <h2>
-
-                Journal
-
-            </h2>
+            <h2>Journal</h2>
 
             <p>
 
                 Read today's thoughts,
-                memories, and little stories.
+                quiet moments,
+                and little stories.
 
             </p>
 
             <button id="journal">
 
-                Open →
+                Open Journal →
 
             </button>
 
         </section>
 
-        <!-- Friends -->
+        <section class="menu-card">
 
-        <section class="card">
+            <div class="menu-icon">🌸</div>
 
-            <div class="icon">
-
-                🌸
-
-            </div>
-
-            <h2>
-
-                Friend Profiles
-
-            </h2>
+            <h2>Friend Profiles</h2>
 
             <p>
 
                 Meet the wonderful people
-                who make this little corner warm.
+                who make this little corner
+                feel like home.
 
             </p>
 
             <button id="profiles">
 
-                Visit →
+                Visit Friends →
 
             </button>
 
         </section>
 
-        <!-- Surprise -->
+        <section class="menu-card">
 
-        <section class="card">
+            <div class="menu-icon">🌿</div>
 
-            <div class="icon">
-
-                🎲
-
-            </div>
-
-            <h2>
-
-                Surprise Me
-
-            </h2>
+            <h2>Secret Garden</h2>
 
             <p>
 
-                Every visit reveals
-                something unexpected.
-
-            </p>
-
-            <button id="surprise">
-
-                Try →
-
-            </button>
-
-        </section>
-
-        <!-- Garden -->
-
-        <section class="card">
-
-            <div class="icon">
-
-                🌿
-
-            </div>
-
-            <h2>
-
-                Secret Garden
-
-            </h2>
-
-            <p>
-
-                Wander through flowers,
-                moonlight and hidden paths.
+                Wander through hidden paths,
+                flowers,
+                and peaceful places.
 
             </p>
 
@@ -197,7 +146,49 @@
 
         </section>
 
+        <section class="menu-card">
+
+            <div class="menu-icon">🎲</div>
+
+            <h2>Surprise Me</h2>
+
+            <p>
+
+                Every visit reveals
+                something new waiting
+                to be discovered.
+
+            </p>
+
+            <button id="surprise">
+
+                Take Me Somewhere →
+
+            </button>
+
+        </section>
+
     </main>
+
+    <!-- Café Radio -->
+
+    <section class="radio-section">
+
+        <h2>
+
+            ♫ Café Radio
+
+        </h2>
+
+        <p>
+
+            Sit back, relax, and enjoy a little music while you're here.
+
+        </p>
+
+        <!-- Existing radio player stays here -->
+
+    </section>
 
     <!-- Quote -->
 
@@ -205,13 +196,23 @@
 
         <p>
 
-            "Every cozy corner begins with a warm welcome."
+            ❝
+
+        </p>
+
+        <p>
+
+            Every cozy corner begins with a warm welcome.
+
+        </p>
+
+        <p>
+
+            ❞
 
         </p>
 
     </section>
-
-    <!-- Footer -->
 
     <footer>
 
