@@ -1,6 +1,6 @@
-/* ==========================================================
-   Café Radio
-========================================================== */
+/*==========================================================
+    Café Radio
+==========================================================*/
 
 #radioToggle{
 
@@ -10,17 +10,11 @@
 
     bottom:30px;
 
-    width:70px;
+    width:72px;
 
-    height:70px;
+    height:72px;
 
     border-radius:50%;
-
-    background:rgba(255,255,255,.15);
-
-    backdrop-filter:blur(18px);
-
-    border:1px solid rgba(255,255,255,.18);
 
     display:flex;
 
@@ -30,11 +24,33 @@
 
     cursor:pointer;
 
-    font-size:32px;
+    font-size:34px;
 
-    box-shadow:0 15px 35px rgba(0,0,0,.25);
+    color:#6B4D38;
 
-    transition:.35s;
+    background:linear-gradient(
+
+        180deg,
+
+        #FFFDF9,
+
+        #F7EFE4
+
+    );
+
+    border:2px solid rgba(169,122,88,.25);
+
+    box-shadow:
+
+        0 12px 35px rgba(0,0,0,.22),
+
+        inset 0 2px 4px rgba(255,255,255,.8);
+
+    transition:
+
+        transform .35s,
+
+        box-shadow .35s;
 
     z-index:99999;
 
@@ -42,9 +58,17 @@
 
 #radioToggle:hover{
 
-    transform:scale(1.08);
+    transform:translateY(-4px) scale(1.06);
+
+    box-shadow:
+
+        0 18px 40px rgba(0,0,0,.28),
+
+        inset 0 2px 6px rgba(255,255,255,.9);
 
 }
+
+/*==========================================================*/
 
 #radioPanel{
 
@@ -54,29 +78,63 @@
 
     bottom:120px;
 
-    width:330px;
+    width:340px;
 
-    background:rgba(255,255,255,.15);
+    background:linear-gradient(
 
-    backdrop-filter:blur(22px);
+        180deg,
 
-    border-radius:25px;
+        #FFFDF9,
 
-    padding:30px;
+        #FBF5EC,
 
-    border:1px solid rgba(255,255,255,.15);
+        #F7EFE4
 
-    box-shadow:0 20px 45px rgba(0,0,0,.35);
+    );
 
-    transform:translateY(30px);
+    border-radius:28px;
+
+    padding:28px;
+
+    border:1px solid rgba(180,150,120,.18);
+
+    box-shadow:
+
+        0 30px 60px rgba(0,0,0,.25);
+
+    transform:
+
+        translateY(20px)
+
+        scale(.98);
 
     opacity:0;
 
     pointer-events:none;
 
-    transition:.35s;
+    transition:
+
+        .35s;
 
     z-index:99999;
+
+    overflow:hidden;
+
+}
+
+#radioPanel::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:12px;
+
+    border-radius:18px;
+
+    border:1px solid rgba(180,150,120,.15);
+
+    pointer-events:none;
 
 }
 
@@ -86,9 +144,17 @@
 
     pointer-events:auto;
 
-    transform:translateY(0);
+    transform:
+
+        translateY(0)
+
+        scale(1);
 
 }
+
+/*==========================================================
+Header
+==========================================================*/
 
 .radioHeader{
 
@@ -96,9 +162,9 @@
 
     justify-content:space-between;
 
-    align-items:center;
+    align-items:flex-start;
 
-    margin-bottom:25px;
+    margin-bottom:28px;
 
 }
 
@@ -106,27 +172,85 @@
 
     font-family:"Playfair Display",serif;
 
-    font-size:26px;
+    font-size:28px;
+
+    color:#5A3F30;
+
+}
+
+.radioSubtitle{
+
+    display:block;
+
+    margin-top:5px;
+
+    font-size:13px;
+
+    color:#987B67;
+
+    letter-spacing:1px;
 
 }
 
 #closeRadio{
 
+    font-size:24px;
+
     cursor:pointer;
 
-    font-size:26px;
+    color:#987B67;
+
+    transition:.3s;
 
 }
 
-.songTitle{
+#closeRadio:hover{
+
+    color:#5A3F30;
+
+    transform:rotate(90deg);
+
+}
+
+/*==========================================================
+Now Playing
+==========================================================*/
+
+.nowPlaying{
 
     text-align:center;
 
-    margin-bottom:25px;
-
-    font-size:18px;
+    margin-bottom:28px;
 
 }
+
+.nowPlaying p{
+
+    font-size:12px;
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+
+    color:#A07B60;
+
+    margin-bottom:8px;
+
+}
+
+.nowPlaying h3{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:24px;
+
+    color:#5A3F30;
+
+}
+
+/*==========================================================
+Controls
+==========================================================*/
 
 .radioControls{
 
@@ -136,89 +260,247 @@
 
     gap:18px;
 
-    margin-bottom:25px;
+    margin-bottom:30px;
 
 }
 
 .radioControls button{
 
-    width:55px;
+    width:56px;
 
-    height:55px;
-
-    border-radius:50%;
+    height:56px;
 
     border:none;
+
+    border-radius:50%;
 
     cursor:pointer;
 
     font-size:20px;
 
+    color:#5A3F30;
+
+    background:linear-gradient(
+
+        180deg,
+
+        #FFFDF9,
+
+        #F6ECE0
+
+    );
+
+    box-shadow:
+
+        0 8px 18px rgba(0,0,0,.15),
+
+        inset 0 2px 4px rgba(255,255,255,.8);
+
+    transition:
+
+        transform .25s,
+
+        box-shadow .25s,
+
+        background .25s;
+
 }
+
+.radioControls button:hover{
+
+    transform:translateY(-3px);
+
+    background:linear-gradient(
+
+        180deg,
+
+        #FFF,
+
+        #F4E6D6
+
+    );
+
+    box-shadow:
+
+        0 12px 24px rgba(0,0,0,.2);
+
+}
+
+.radioControls button:active{
+
+    transform:scale(.96);
+
+}
+
+/*==========================================================
+Sections
+==========================================================*/
+
+.radioSection{
+
+    margin-bottom:22px;
+
+}
+
+.radioSection:last-child{
+
+    margin-bottom:0;
+
+}
+
+.radioSection label{
+
+    display:block;
+
+    margin-bottom:10px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
+    color:#8E6B55;
+
+}
+
+/*==========================================================
+Volume Slider
+==========================================================*/
 
 .volumeSlider{
 
     width:100%;
 
-    margin:20px 0;
+    cursor:pointer;
+
+    accent-color:#A97A58;
 
 }
+
+/* Chrome */
+
+.volumeSlider::-webkit-slider-runnable-track{
+
+    height:8px;
+
+    border-radius:999px;
+
+    background:#E7D8C7;
+
+}
+
+.volumeSlider::-webkit-slider-thumb{
+
+    appearance:none;
+
+    width:18px;
+
+    height:18px;
+
+    margin-top:-5px;
+
+    border-radius:50%;
+
+    background:#A97A58;
+
+    border:2px solid white;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.2);
+
+}
+
+/* Firefox */
+
+.volumeSlider::-moz-range-track{
+
+    height:8px;
+
+    border-radius:999px;
+
+    background:#E7D8C7;
+
+}
+
+.volumeSlider::-moz-range-thumb{
+
+    width:18px;
+
+    height:18px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#A97A58;
+
+}
+
+/*==========================================================
+Playlist
+==========================================================*/
 
 .playlist{
 
     width:100%;
 
-    padding:12px;
+    padding:13px 16px;
 
-    border-radius:15px;
+    border-radius:14px;
 
-    border:none;
+    border:1px solid rgba(169,122,88,.25);
 
-    margin-top:15px;
+    background:#FFFDF9;
+
+    color:#5A3F30;
+
+    font-family:"Poppins",sans-serif;
+
+    font-size:15px;
+
+    cursor:pointer;
+
+    outline:none;
+
+    transition:
+
+        border-color .25s,
+
+        box-shadow .25s;
+
+}
+
+.playlist:hover{
+
+    border-color:#A97A58;
 
 }
 
-.radioNote{
+.playlist:focus{
 
-    position:absolute;
+    border-color:#A97A58;
 
-    animation:floatRadioNote 4s linear forwards;
+    box-shadow:
 
-    pointer-events:none;
-
-    font-size:24px;
+        0 0 0 4px rgba(169,122,88,.15);
 
 }
 
-@keyframes floatRadioNote{
-
-    from{
-
-        opacity:1;
-
-        transform:translateY(0);
-
-    }
-
-    to{
-
-        opacity:0;
-
-        transform:translateY(-180px);
-
-    }
-
-}
+/*==========================================================
+Playing State
+==========================================================*/
 
 #radioToggle.playing{
 
-    animation:pulseRadio 2s infinite;
+    animation:teaPulse 2.5s ease-in-out infinite;
 
 }
 
-@keyframes pulseRadio{
+@keyframes teaPulse{
 
-    0%,100%{
+    0%{
 
         transform:scale(1);
 
@@ -230,16 +512,282 @@
 
     }
 
+    100%{
+
+        transform:scale(1);
+
+    }
+
 }
 
-@media(max-width:700px){
+/*==========================================================
+Floating Music Notes
+==========================================================*/
+
+.radioNote{
+
+    position:fixed;
+
+    pointer-events:none;
+
+    color:#A97A58;
+
+    opacity:.9;
+
+    z-index:99998;
+
+    animation:floatNote 4s linear forwards;
+
+}
+
+@keyframes floatNote{
+
+    0%{
+
+        opacity:1;
+
+        transform:
+
+            translateY(0)
+
+            translateX(0)
+
+            rotate(0deg);
+
+    }
+
+    25%{
+
+        transform:
+
+            translateY(-40px)
+
+            translateX(-8px)
+
+            rotate(-8deg);
+
+    }
+
+    50%{
+
+        transform:
+
+            translateY(-80px)
+
+            translateX(8px)
+
+            rotate(8deg);
+
+    }
+
+    75%{
+
+        transform:
+
+            translateY(-120px)
+
+            translateX(-5px)
+
+            rotate(-5deg);
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+
+            translateY(-170px)
+
+            translateX(12px)
+
+            rotate(12deg);
+
+    }
+
+}
+
+/*==========================================================
+Radio Panel Animation
+==========================================================*/
 
 #radioPanel{
 
-    width:90%;
+    transform-origin:
 
-    right:5%;
+        bottom right;
 
 }
+
+#radioPanel.open{
+
+    animation:radioOpen .35s ease;
+
+}
+
+@keyframes radioOpen{
+
+    from{
+
+        opacity:0;
+
+        transform:
+
+            translateY(20px)
+
+            scale(.95);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+
+            translateY(0)
+
+            scale(1);
+
+    }
+
+}
+
+/*==========================================================
+Hover Polish
+==========================================================*/
+
+#radioPanel button,
+
+.playlist,
+
+#closeRadio,
+
+#radioToggle{
+
+    user-select:none;
+
+}
+
+.radioControls button:hover{
+
+    color:#8D6246;
+
+}
+
+.nowPlaying h3{
+
+    transition:
+
+        color .3s;
+
+}
+
+#radioPanel:hover .nowPlaying h3{
+
+    color:#8D6246;
+
+}
+
+/*==========================================================
+Scrollbar
+==========================================================*/
+
+#radioPanel::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+#radioPanel::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+#radioPanel::-webkit-scrollbar-thumb{
+
+    background:#C8AA8E;
+
+    border-radius:999px;
+
+}
+
+/*==========================================================
+Mobile
+==========================================================*/
+
+@media (max-width:700px){
+
+    #radioToggle{
+
+        width:62px;
+
+        height:62px;
+
+        right:18px;
+
+        bottom:18px;
+
+        font-size:28px;
+
+    }
+
+    #radioPanel{
+
+        width:calc(100% - 36px);
+
+        right:18px;
+
+        bottom:95px;
+
+        padding:22px;
+
+    }
+
+    .radioHeader h2{
+
+        font-size:24px;
+
+    }
+
+    .nowPlaying h3{
+
+        font-size:22px;
+
+    }
+
+    .radioControls{
+
+        gap:14px;
+
+    }
+
+    .radioControls button{
+
+        width:50px;
+
+        height:50px;
+
+        font-size:18px;
+
+    }
+
+}
+
+/*==========================================================
+Reduced Motion
+==========================================================*/
+
+@media (prefers-reduced-motion: reduce){
+
+    *{
+
+        animation:none !important;
+
+        transition:none !important;
+
+    }
 
 }

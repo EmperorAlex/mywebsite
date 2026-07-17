@@ -8,187 +8,300 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-/* ===================================================== */
+/* ==========================================================
+   Playlist
+========================================================== */
 
-const playlist = [
+const musicList = [
 
-{
-title:"Rainy Café",
-file:"../audio/rainy-cafe.mp3"
-},
+    {
+        title: "Rainy Café",
+        file: "../audio/rainy-cafe.mp3"
+    },
 
-{
-title:"Soft Piano",
-file:"../audio/soft-piano.mp3"
-},
+    {
+        title: "Soft Piano",
+        file: "../audio/soft-piano.mp3"
+    },
 
-{
-title:"Fireplace",
-file:"../audio/fireplace.mp3"
-},
+    {
+        title: "Fireplace",
+        file: "../audio/fireplace.mp3"
+    },
 
-{
-title:"Garden Breeze",
-file:"../audio/garden.mp3"
-}
+    {
+        title: "Garden Breeze",
+        file: "../audio/garden.mp3"
+    }
 
 ];
 
-let currentSong = Number(localStorage.getItem("radioSong")) || 0;
+/* ==========================================================
+   Global State
+========================================================== */
 
-/* ===================================================== */
+let currentSong = Number(
+    localStorage.getItem("radioSong")
+) || 0;
+
+let noteInterval = null;
+
+let audio;
+let playButton;
+let toggleButton;
+let radioPanel;
+let closeButton;
+let playlistSelect;
+let volumeSlider;
+let songTitle;
+
+/* ==========================================================
+   Local Storage Keys
+========================================================== */
+
+const STORAGE = {
+
+    SONG: "radioSong",
+
+    TIME: "radioTime",
+
+    VOLUME: "radioVolume",
+
+    PLAYING: "radioPlaying"
+
+};
+
+/* ==========================================================
+   Create Radio
+========================================================== */
 
 function createRadio(){
 
     const html = `
 
-<div id="radioToggle">📻</div>
+        <div id="radioToggle">
 
-<div id="radioPanel">
+            ☕
 
-<div class="radioHeader">
+        </div>
 
-<h2>Café Radio</h2>
+        <div id="radioPanel">
 
-<div id="closeRadio">✕</div>
+            <div class="radioHeader">
 
-</div>
+                <div>
 
-<div class="songTitle" id="songTitle"></div>
+                    <h2>Café Radio</h2>
 
-<div class="radioControls">
+                    <span class="radioSubtitle">
 
-<button id="previousSong">⏮</button>
+                        Freshly Brewed Music
 
-<button id="playPause">▶</button>
+                    </span>
 
-<button id="nextSong">⏭</button>
+                </div>
 
-</div>
+                <div id="closeRadio">
 
-<input
+                    ✕
 
-type="range"
+                </div>
 
-min="0"
+            </div>
 
-max="1"
+            <div class="nowPlaying">
 
-step="0.01"
+                <p>
 
-class="volumeSlider"
+                    Now Brewing
 
-id="volumeSlider">
+                </p>
 
-<select
+                <h3 id="songTitle">
 
-id="playlist"
+                </h3>
 
-class="playlist">
+            </div>
 
-</select>
+            <div class="radioControls">
 
-</div>
+                <button id="previousSong">
 
-<audio id="radioAudio"></audio>
+                    ⏮
 
-`;
+                </button>
 
-    document.body.insertAdjacentHTML("beforeend",html);
+                <button id="playPause">
+
+                    ▶
+
+                </button>
+
+                <button id="nextSong">
+
+                    ⏭
+
+                </button>
+
+            </div>
+
+            <div class="radioSection">
+
+                <label for="volumeSlider">
+
+                    Volume
+
+                </label>
+
+                <input
+
+                    type="range"
+
+                    id="volumeSlider"
+
+                    class="volumeSlider"
+
+                    min="0"
+
+                    max="1"
+
+                    step="0.01"
+
+                >
+
+            </div>
+
+            <div class="radioSection">
+
+                <label for="playlist">
+
+                    Playlist
+
+                </label>
+
+                <select
+
+                    id="playlist"
+
+                    class="playlist"
+
+                >
+
+                </select>
+
+            </div>
+
+        </div>
+
+        <audio id="radioAudio"></audio>
+
+    `;
+
+    document.body.insertAdjacentHTML(
+
+        "beforeend",
+
+        html
+
+    );
 
     setupPlayer();
 
 }
 
-/* ===================================================== */
+/* ==========================================================
+   Setup Player
+========================================================== */
 
 function setupPlayer(){
 
-    const audio=document.getElementById("radioAudio");
+    audio = document.getElementById("radioAudio");
 
-    const play=document.getElementById("playPause");
+    playButton = document.getElementById("playPause");
 
-    const toggle=document.getElementById("radioToggle");
+    toggleButton = document.getElementById("radioToggle");
 
-    const panel=document.getElementById("radioPanel");
+    radioPanel = document.getElementById("radioPanel");
 
-    const close=document.getElementById("closeRadio");
+    closeButton = document.getElementById("closeRadio");
 
-    const select=document.getElementById("playlist");
+    playlistSelect = document.getElementById("playlist");
 
-    const volume=document.getElementById("volumeSlider");
+    volumeSlider = document.getElementById("volumeSlider");
 
-    const title=document.getElementById("songTitle");
+    songTitle = document.getElementById("songTitle");
 
-    /* Playlist */
+    /* ===============================
+       Build Playlist
+    =============================== */
 
-    playlist.forEach((song,index)=>{
+    musicList.forEach((song,index)=>{
 
-        const option=document.createElement("option");
+        const option = document.createElement("option");
 
-        option.value=index;
+        option.value = index;
 
-        option.textContent=song.title;
+        option.textContent = song.title;
 
-        select.appendChild(option);
+        playlistSelect.appendChild(option);
 
     });
 
-    /* Restore */
+    /* ===============================
+       Restore Settings
+    =============================== */
 
-    volume.value=localStorage.getItem("radioVolume") || .5;
+    volumeSlider.value = localStorage.getItem(STORAGE.VOLUME) || .5;
 
-    audio.volume=volume.value;
+    audio.volume = volumeSlider.value;
 
-    select.value=currentSong;
+    playlistSelect.value = currentSong;
 
     loadSong(currentSong);
 
-    const savedTime=Number(localStorage.getItem("radioTime"))||0;
+    audio.currentTime = Number(
 
-    audio.currentTime=savedTime;
+        localStorage.getItem(STORAGE.TIME)
 
-    if(localStorage.getItem("radioPlaying")==="true"){
+    ) || 0;
+
+    if(localStorage.getItem(STORAGE.PLAYING)==="true"){
 
         audio.play().catch(()=>{});
 
-        play.textContent="❚❚";
+        updatePlayerState();
 
-        toggle.classList.add("playing");
-
-        createNotes();
+        startNotes();
 
     }
 
-    /* Toggle */
+    /* ===============================
+       Toggle Panel
+    =============================== */
 
-    toggle.onclick=()=>{
+    toggleButton.onclick = ()=>{
 
-        panel.classList.toggle("open");
-
-    };
-
-    close.onclick=()=>{
-
-        panel.classList.remove("open");
+        radioPanel.classList.toggle("open");
 
     };
 
-    /* Play */
+    closeButton.onclick = ()=>{
 
-    play.onclick=()=>{
+        radioPanel.classList.remove("open");
+
+    };
+
+    /* ===============================
+       Play / Pause
+    =============================== */
+
+    playButton.onclick = ()=>{
 
         if(audio.paused){
 
             audio.play();
 
-            play.textContent="❚❚";
-
-            toggle.classList.add("playing");
-
-            localStorage.setItem("radioPlaying","true");
-
-            createNotes();
+            startNotes();
 
         }
 
@@ -196,113 +309,241 @@ function setupPlayer(){
 
             audio.pause();
 
-            play.textContent="▶";
-
-            toggle.classList.remove("playing");
-
-            localStorage.setItem("radioPlaying","false");
+            stopNotes();
 
         }
 
-    };
-
-    /* Next */
-
-    document.getElementById("nextSong").onclick=()=>{
-
-        currentSong++;
-
-        if(currentSong>=playlist.length){
-
-            currentSong=0;
-
-        }
-
-        loadSong(currentSong);
-
-        audio.play();
+        updatePlayerState();
 
     };
 
-    /* Previous */
+    /* ===============================
+       Previous Song
+    =============================== */
 
-    document.getElementById("previousSong").onclick=()=>{
+    document.getElementById("previousSong").onclick = ()=>{
 
         currentSong--;
 
         if(currentSong<0){
 
-            currentSong=playlist.length-1;
+            currentSong = musicList.length-1;
 
         }
 
-        loadSong(currentSong);
-
-        audio.play();
+        playSong(currentSong);
 
     };
 
-    /* Playlist */
+    /* ===============================
+       Next Song
+    =============================== */
 
-    select.onchange=()=>{
+    document.getElementById("nextSong").onclick = ()=>{
 
-        currentSong=Number(select.value);
+        currentSong++;
 
-        loadSong(currentSong);
+        if(currentSong>=musicList.length){
 
-        audio.play();
+            currentSong = 0;
 
-    };
+        }
 
-    /* Volume */
-
-    volume.oninput=()=>{
-
-        audio.volume=volume.value;
-
-        localStorage.setItem("radioVolume",volume.value);
+        playSong(currentSong);
 
     };
 
-    /* Save position */
+    /* ===============================
+       Playlist
+    =============================== */
+
+    playlistSelect.onchange = ()=>{
+
+        currentSong = Number(
+
+            playlistSelect.value
+
+        );
+
+        playSong(currentSong);
+
+    };
+
+    /* ===============================
+       Volume
+    =============================== */
+
+    volumeSlider.oninput = ()=>{
+
+        audio.volume = volumeSlider.value;
+
+        localStorage.setItem(
+
+            STORAGE.VOLUME,
+
+            volumeSlider.value
+
+        );
+
+    };
+
+    /* ===============================
+       Save Playback
+    =============================== */
 
     setInterval(()=>{
 
-        localStorage.setItem("radioTime",audio.currentTime);
+        localStorage.setItem(
+
+            STORAGE.TIME,
+
+            audio.currentTime
+
+        );
 
     },1000);
 
-    function loadSong(index){
+    /* ===============================
+       Auto Next Song
+    =============================== */
 
-        audio.src=playlist[index].file;
+    audio.onended = ()=>{
 
-        title.textContent=playlist[index].title;
+        currentSong++;
 
-        localStorage.setItem("radioSong",index);
+        if(currentSong>=musicList.length){
+
+            currentSong = 0;
+
+        }
+
+        playSong(currentSong);
+
+    };
+
+}
+
+/* ==========================================================
+   Player Functions
+========================================================== */
+
+function loadSong(index){
+
+    const song = musicList[index];
+
+    audio.src = song.file;
+
+    songTitle.textContent = song.title;
+
+    playlistSelect.value = index;
+
+    localStorage.setItem(
+
+        STORAGE.SONG,
+
+        index
+
+    );
+
+}
+
+/* ========================================================== */
+
+function playSong(index){
+
+    currentSong = index;
+
+    loadSong(index);
+
+    audio.currentTime = 0;
+
+    audio.play();
+
+    startNotes();
+
+    updatePlayerState();
+
+}
+
+/* ========================================================== */
+
+function updatePlayerState(){
+
+    if(audio.paused){
+
+        playButton.textContent = "▶";
+
+        toggleButton.classList.remove("playing");
+
+        localStorage.setItem(
+
+            STORAGE.PLAYING,
+
+            "false"
+
+        );
+
+    }
+
+    else{
+
+        playButton.textContent = "❚❚";
+
+        toggleButton.classList.add("playing");
+
+        localStorage.setItem(
+
+            STORAGE.PLAYING,
+
+            "true"
+
+        );
 
     }
 
 }
 
-/* ===================================================== */
+/* ==========================================================
+   Floating Notes
+========================================================== */
 
-function createNotes(){
+function startNotes(){
 
-    setInterval(()=>{
+    if(noteInterval) return;
 
-        const audio=document.getElementById("radioAudio");
+    noteInterval = setInterval(()=>{
 
         if(audio.paused) return;
 
-        const note=document.createElement("div");
+        const note = document.createElement("div");
 
-        note.className="radioNote";
+        note.className = "radioNote";
 
-        note.textContent=["♫","♪","♬"][Math.floor(Math.random()*3)];
+        note.textContent =
 
-        note.style.left=(window.innerWidth-120)+"px";
+            ["♫","♪","♬"][
 
-        note.style.bottom="110px";
+                Math.floor(
+
+                    Math.random()*3
+
+                )
+
+            ];
+
+        note.style.left =
+
+            (window.innerWidth-120)+"px";
+
+        note.style.bottom = "110px";
+
+        note.style.fontSize =
+
+            (20+Math.random()*12)+"px";
+
+        note.style.transform =
+
+            `rotate(${Math.random()*30-15}deg)`;
 
         document.body.appendChild(note);
 
@@ -312,6 +553,36 @@ function createNotes(){
 
         },4000);
 
-    },2200);
+    },1800);
 
 }
+
+/* ========================================================== */
+
+function stopNotes(){
+
+    clearInterval(noteInterval);
+
+    noteInterval = null;
+
+}
+
+/* ==========================================================
+   Audio Events
+========================================================== */
+
+audio?.addEventListener("pause",()=>{
+
+    stopNotes();
+
+    updatePlayerState();
+
+});
+
+audio?.addEventListener("play",()=>{
+
+    startNotes();
+
+    updatePlayerState();
+
+});
