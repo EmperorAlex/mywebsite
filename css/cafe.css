@@ -291,37 +291,71 @@ MENU HEADER
 MENU ITEMS
 ==========================================================*/
 
-.menu-item{
+.menu-item button{
 
-    display:flex;
+    padding:14px 28px;
 
-    justify-content:space-between;
+    border:none;
 
-    align-items:center;
+    border-radius:999px;
 
-    gap:40px;
+    background:linear-gradient(
 
-    padding:36px 10px;
+        180deg,
 
-    text-decoration:none;
+        #A97A58,
 
-    border-top:1px solid rgba(185,155,125,.18);
+        #8D6246
+
+    );
+
+    color:white;
+
+    font-family:"Poppins",sans-serif;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    box-shadow:
+
+        0 8px 20px rgba(0,0,0,.18);
 
     transition:
 
-        background .35s ease,
+        transform .25s,
 
-        padding .35s ease,
+        box-shadow .25s,
 
-        transform .35s ease;
+        background .25s;
 
-    color:inherit;
+}
 
-    opacity:0;
+.menu-item button:hover{
 
-    transform:translateY(25px);
+    transform:translateY(-3px);
 
-    animation:fadeMenu .8s forwards;
+    background:linear-gradient(
+
+        180deg,
+
+        #B98964,
+
+        #9E7150
+
+    );
+
+    box-shadow:
+
+        0 14px 28px rgba(0,0,0,.24);
+
+}
+
+.menu-item button:active{
+
+    transform:translateY(-1px);
 
 }
 

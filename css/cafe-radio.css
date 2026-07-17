@@ -310,9 +310,11 @@ Controls
 
 .radioControls button{
 
-    width:56px;
-
-    height:56px;
+    width:48px;
+    
+    height:48px;
+    
+    font-size:18px;
 
     border:none;
 
